@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
+import { Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
 
 export default class User extends Component {
   render() {
+    // eslint-disable-next-line
     const { userName, avatarUrl, bio, location, totalCount, id } = this.props;
+    const followers = `${totalCount} Followers`;
     return (
       <Card style={{ flex: 0 }} key={id}>
         <CardItem>
@@ -25,7 +26,7 @@ export default class User extends Component {
           <Left>
             <Button transparent textStyle={{ color: '#87838B' }}>
               <Icon name="logo-github" />
-              <Text>{totalCount} Followers</Text>
+              <Text>{followers}</Text>
             </Button>
           </Left>
         </CardItem>

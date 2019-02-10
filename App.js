@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { Platform, Text, View, Image, FlatList } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Thumbnail, Button, Icon, Left, Body, Title, Spinner } from 'native-base';
+import { Text, FlatList } from 'react-native';
+import { Container, Header, Content, Body, Title, Spinner } from 'native-base';
 import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
-import { ApolloProvider, Query, ApolloConsumer, createNetworkInterface } from 'react-apollo';
-
-import styles from './App.style';
-import User from './User';
-
-console.disableYellowBox = true;
 
 import config from './config';
+import styles from './App.style';
+import User from './User';
+// eslint-disable-next-line
+console.disableYellowBox = true;
+
+// initialize a GraphQL client
 
 const client = new ApolloClient({
   uri: 'https://api.github.com/graphql',
@@ -22,6 +22,8 @@ const client = new ApolloClient({
     });
   },
 });
+
+// write a GraphQL query that asks first 100 users who has most followers
 
 const GET_USERS = gql`
   {
@@ -58,13 +60,12 @@ export default class App extends Component {
     isLoading: true,
     users: {},
   };
+
   componentDidMount = () => {
     this.loadData();
   };
+
   loadData = async () => {
-    this.setState({
-      isLoading: true,
-    });
     const { data } = await client.query({
       query: GET_USERS,
     });
@@ -83,8 +84,19 @@ export default class App extends Component {
       followers: { totalCount },
       id,
     } = item.node;
-    return <User userName={login} bio={bio} avatarUrl={avatarUrl} totalCount={totalCount} location={location} key={id} id={id} />;
+    return (
+      <User
+        userName={login}
+        bio={bio}
+        avatarUrl={avatarUrl}
+        totalCount={totalCount}
+        location={location}
+        key={id}
+        id={id}
+      />
+    );
   };
+
   renderUsers = () => {
     const { isLoading, users } = this.state;
     const { search } = users;
@@ -96,7 +108,12 @@ export default class App extends Component {
       return <Spinner color="green" />;
     }
     return (
-      <FlatList data={allUsers} showsVerticalScrollIndicator={false} renderItem={item => this.renderItem(item.item)} keyExtractor={item => item.id} />
+      <FlatList
+        data={allUsers}
+        showsVerticalScrollIndicator={false}
+        renderItem={item => this.renderItem(item.item)}
+        keyExtractor={item => item.id}
+      />
     );
   };
 
