@@ -4,7 +4,7 @@ import { Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'nativ
 export default class User extends Component {
   render() {
     // eslint-disable-next-line
-    const { userName, avatarUrl, bio, location, totalCount, id } = this.props;
+    const { userName, avatarUrl, bio, location, totalCount, id, company, onPressItem } = this.props;
     const followers = `${totalCount} Followers`;
     return (
       <Card style={{ flex: 0 }} key={id}>
@@ -13,6 +13,7 @@ export default class User extends Component {
             <Thumbnail source={{ uri: avatarUrl }} />
             <Body>
               <Text>{userName}</Text>
+              {company ? <Text note>{company}</Text> : null}
               <Text note>{location}</Text>
             </Body>
           </Left>

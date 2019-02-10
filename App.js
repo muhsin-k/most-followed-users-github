@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, FlatList } from 'react-native';
+import { Text, FlatList, Linking } from 'react-native';
 import { Container, Header, Content, Body, Title, Spinner } from 'native-base';
 import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
@@ -81,6 +81,8 @@ export default class App extends Component {
       login,
       bio,
       location,
+      company,
+      url,
       followers: { totalCount },
       id,
     } = item.node;
@@ -91,6 +93,8 @@ export default class App extends Component {
         avatarUrl={avatarUrl}
         totalCount={totalCount}
         location={location}
+        company={company}
+        url={url}
         key={id}
         id={id}
       />
@@ -105,7 +109,7 @@ export default class App extends Component {
       allUsers = search.edges;
     }
     if (isLoading) {
-      return <Spinner color="green" />;
+      return <Spinner color="#0366d6" />;
     }
     return (
       <FlatList
@@ -120,7 +124,7 @@ export default class App extends Component {
   render() {
     return (
       <Container>
-        <Header>
+        <Header style={{ backgroundColor: '#0366d6' }} androidStatusBarColor="#0366d6">
           <Body style={styles.titleBody}>
             <Title>
               <Text style={styles.title} t>
