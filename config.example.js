@@ -1,0 +1,1 @@
+export default { accessToken: 'DAFAFSDFDSFDFDFDFDS' };

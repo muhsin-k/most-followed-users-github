@@ -4,9 +4,9 @@ import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Ic
 
 export default class User extends Component {
   render() {
-    const { userName, avatarUrl, bio, location, totalCount } = this.props;
+    const { userName, avatarUrl, bio, location, totalCount, id } = this.props;
     return (
-      <Card style={{ flex: 0 }}>
+      <Card style={{ flex: 0 }} key={id}>
         <CardItem>
           <Left>
             <Thumbnail source={{ uri: avatarUrl }} />
@@ -16,9 +16,11 @@ export default class User extends Component {
             </Body>
           </Left>
         </CardItem>
-        <CardItem>
-          <Text>{bio}</Text>
-        </CardItem>
+        {bio ? (
+          <CardItem>
+            <Text>{bio}</Text>
+          </CardItem>
+        ) : null}
         <CardItem style={{ paddingTop: 0, paddingBottom: 0, marginTop: 0 }}>
           <Left>
             <Button transparent textStyle={{ color: '#87838B' }}>
