@@ -20,9 +20,9 @@ $ react-native run-ios
 
 ### APK
 
-To download the production/release APK, click [here](https://github.com/react-native-material-design/demo-app/raw/master/app-release.apk)
+To download the production/release APK, click [here](https://github.com/muhzi4u/most-followed-users-github/example/github-followers.apk)
 
-## Screenshot
+### Screenshot
 
 ![Home Page](example/home.jpeg 'Home Page')
 
