@@ -1,4 +1,4 @@
-# most-followed-users-in-github
+# Most followed users in github
 
 A React native application to show most followed users in github by using Apollo Client and GitHub's GraphQL API.
 
