@@ -2,6 +2,10 @@
 
 A React native application to show most followed users in github by using Apollo Client and GitHub's GraphQL API.
 
+
+![Sign up](./screenshots/home.png "Home Page")
+
+
 ## Installation
 
 ```sh
