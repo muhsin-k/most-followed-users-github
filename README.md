@@ -18,10 +18,6 @@ $ react-native run-ios
 - [How to generate Github Access Token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
   - scopes/permissions you need to check: user
 
-### APK
-
-To download the production/release APK, click [here](https://github.com/muhzi4u/most-followed-users-github/example/github-followers.apk)
-
 ### Screenshot
 
 ![Home Page](example/home.jpeg 'Home Page')
