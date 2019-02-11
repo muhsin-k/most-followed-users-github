@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, FlatList, Linking } from 'react-native';
+import { Text, FlatList } from 'react-native';
 import { Container, Header, Content, Body, Title, Spinner } from 'native-base';
 import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
@@ -128,7 +128,7 @@ export default class App extends Component {
           <Body style={styles.titleBody}>
             <Title>
               <Text style={styles.title} t>
-                Most Github Followers
+                Most Followed Users in Github
               </Text>
             </Title>
           </Body>
