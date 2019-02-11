@@ -5,8 +5,8 @@ A React native application to show most followed users in github by using Apollo
 ## Installation
 
 ```sh
-$ git clone git@github.com:muhzi4u/most-followed-users.git
-$ cd most-followed-users
+$ git clone git@github.com:muhzi4u/most-followed-users-github.git
+$ cd most-followed-users-github
 $ Copy config.example.js into a file called config.js, and replace accessToken with your token
 $ yarn install
 $ react-native run-android
